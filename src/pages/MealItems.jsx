@@ -18,7 +18,10 @@ export default function MealItems(params) {
         .finally(()=>setShowloading(null))
     }
     return(
-        <div className="container">
+        <>
+            {
+                meals?
+                <div className="container">
             <div className="row pt-3">
                 <div className="col-10">
                     <h2 className="center">View meals for {category}</h2>
@@ -35,6 +38,8 @@ export default function MealItems(params) {
                     <Meal key={index} meal={meal}/>
                 ))}
             </div>
-        </div>
+        </div>:null
+            }
+        </>
     );
 };
